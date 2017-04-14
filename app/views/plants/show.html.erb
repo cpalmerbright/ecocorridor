@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id number:</strong>
+  <%= @plant.id_number %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @plant.common_name %>
+</p>
+
+<p>
+  <strong>Scientific name:</strong>
+  <%= @plant.scientific_name %>
+</p>
+
+<%= link_to 'Edit', edit_plant_path(@plant) %> |
+<%= link_to 'Back', plants_path %>
