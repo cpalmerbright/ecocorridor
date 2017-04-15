@@ -3,7 +3,7 @@
 <h1>Plants</h1>
 
 <%= form_tag(plants_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :ecocorridor, params[:ecocorridor], placeholder: "Search Plants" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Plants" %>
     <%= submit_tag "Search" %>
 <% end %>
 
@@ -22,9 +22,8 @@
     <% @plants.each do |plant| %>
       <tr>
         <td><%= plant.id_number %></td>
-        <td><%= plant.common_name %></td>
-        <td><%= plant.scientific_name %></td>
-        <td><%= link_to 'Show', plant %></td>
+        <td><a href='<%= plant_path(plant) %>'> <%= plant.common_name %></a></td>
+        <td><a href='<%= plant_path(plant) %>'> <%= plant.scientific_name %></a></td>
         <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
         <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

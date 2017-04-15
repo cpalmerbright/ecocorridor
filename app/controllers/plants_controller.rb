@@ -5,8 +5,8 @@ class PlantsController < ApplicationController
   # GET /plants.json
   def index
     @plants = Plant.all
-    if params[:ecocorridor]
-      @plants = Plant.search(params[:ecocorridor]).order("created_at DESC")
+    if params[:search]
+      @plants = Plant.search(params[:search]).order("created_at DESC")
     else
       @plants = Plant.all.order('created_at DESC')
     end
@@ -74,6 +74,6 @@ class PlantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_params
-      params.require(:plant).permit(:id_number, :common_name, :scientific_name)
+      params.require(:plant).permit(:id_number, :common_name, :scientific_name, :description, :img_url)
     end
 end

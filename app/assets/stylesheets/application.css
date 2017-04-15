@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
+#show-image {
+    max-width: 80%;
+}

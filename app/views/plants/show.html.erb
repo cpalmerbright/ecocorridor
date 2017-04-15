@@ -15,5 +15,14 @@
   <%= @plant.scientific_name %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @plant.description %>
+</p>
+
+<div id="show-image">
+  <%= image_tag("#{@plant.id_number}.jpg", alt: "Image of #{@plant.common_name}") %>
+</div>
+
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %>
